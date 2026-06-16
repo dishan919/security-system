@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function Login() {
+function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = (e) => {
+  const navigate = useNavigate();
+
+  const handleRegister = (e) => {
     e.preventDefault();
 
     if (!email || !password) {
@@ -12,14 +15,19 @@ function Login() {
       return;
     }
 
-    console.log("Login Data:", { email, password });
+    console.log("Register:", { email, password });
+
+    alert("Registered successfully");
+
+    // 👉 after register go to login
+    navigate("/");
   };
 
   return (
     <div>
-      <h1>Login Page</h1>
+      <h1>Register Page</h1>
 
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleRegister}>
         <input
           type="email"
           placeholder="Email"
@@ -32,10 +40,10 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button type="submit">Login</button>
+        <button type="submit">Register</button>
       </form>
     </div>
   );
 }
 
-export default Login;
+export default Register;

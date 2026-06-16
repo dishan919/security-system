@@ -6,6 +6,7 @@ import authRoutes from "./routes/authRoutes.js";
 import historyRoutes from "./routes/historyRoutes.js";
 import notificationRoutes from "./routes/notificationRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
+import accountRoutes from "./routes/accountRoutes.js";
 
 
 console.log("🔥 SERVER FILE LOADED");
@@ -20,6 +21,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/history", historyRoutes);
 app.use("/api/notifications", notificationRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/accounts", accountRoutes);
 
 app.use("/api/auth", authRoutes);
 app.get("/test", (req, res) => {
@@ -30,4 +32,7 @@ const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+});
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
 });

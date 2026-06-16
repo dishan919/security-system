@@ -1,0 +1,95 @@
+/* ===== HERO BACKGROUND ===== */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+/* ===== GLASS CARD ===== */
+.glass-card {
+  width: 100%;
+  max-width: 1100px;
+  padding: 40px;
+  border-radius: 25px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== HERO LAYOUT ===== */
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* ===== TEXT ===== */
+.text-section {
+  flex: 1;
+  color: white;
+}
+
+.text-section h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.text-section p {
+  font-size: 16px;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* ===== BUTTON ===== */
+.cta-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  color: white;
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+}
+
+/* ===== IMAGE ===== */
+.image-section img {
+  width: 380px;
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================
+   📱 MOBILE
+========================= */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-section h1 {
+    font-size: 28px;
+  }
+
+  .image-section img {
+    width: 260px;
+  }
+}
